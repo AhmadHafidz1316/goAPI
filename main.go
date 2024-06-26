@@ -6,9 +6,17 @@ import (
 	"github.com/AhmadHafidz1316/goAPI/controllers/usercontroller"
 	"github.com/AhmadHafidz1316/goAPI/models"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+	"log"
 )
 
 func main() {
+
+	err := godotenv.Load()
+    if err != nil {
+        log.Fatalf("Error loading .env file")
+    }
+
 	r := gin.Default();
 	models.ConnectDatabase()
 
